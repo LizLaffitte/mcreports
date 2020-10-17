@@ -5,13 +5,23 @@ import {fetchCampaigns} from '../actions/campaignActions'
 class Campaigns extends Component{
     componentDidMount(){
         this.props.fetchCampaigns()
+        
+    }
+
+    renderCampaigns = () => {
+        return this.props.campaigns.map(campaign => {
+            return(<li>{campaign.campaign_title}</li>)
+        })
+
     }
     render(){
-        debugger
         return(
-           <p>
-
-           </p>
+           <div>
+               <h1>Recent Campaigns:</h1>
+               <ul>
+                   {this.renderCampaigns()}
+               </ul>
+           </div>
         )
     }
 }
