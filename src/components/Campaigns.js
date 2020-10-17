@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {fetchCampaigns} from '../actions/campaignActions'
+import {Link} from 'react-router-dom'
 import Button from './Button'
 
 class Campaigns extends Component{
@@ -9,13 +10,9 @@ class Campaigns extends Component{
         
     }
 
-    getReport = () =>{
-        console.log("Click")
-    }
-
     renderCampaigns = () => {
         return this.props.campaigns.map(campaign => {
-            return(<li>{campaign.campaign_title} <Button text="See Report" click={this.getReport} /></li>)
+            return(<li key={campaign.id}>{campaign.campaign_title} <Link to={`/reports/${campaign.id}`}><Button text="See Report"/></Link></li>)
         })
 
     }
