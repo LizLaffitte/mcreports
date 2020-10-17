@@ -3,6 +3,7 @@ export const addCampaigns = campaigns => {
         type: "ADD_CAMPAIGNS",
         campaigns
     }
+
 }
 
 
