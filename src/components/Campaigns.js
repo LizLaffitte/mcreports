@@ -4,6 +4,7 @@ import {fetchCampaigns} from '../actions/campaignActions'
 import {Link} from 'react-router-dom'
 import Button from './Button'
 
+
 class Campaigns extends Component{
     componentDidMount(){
         this.props.fetchCampaigns()
