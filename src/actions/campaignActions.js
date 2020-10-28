@@ -13,7 +13,8 @@ export const addCampaigns = campaigns => {
 //Async
 
 export const fetchCampaigns = () => {
-    const baseUrl = `http://localhost:3001/api/v1/campaigns`
+    // const baseUrl = `http://localhost:3001/api/v1/campaigns`
+    const baseUrl = `http://localhost:9000/campaigns`
     return dispatch => {
         return fetch(baseUrl, {
             method: "GET",
