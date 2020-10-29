@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 import Button from './Button'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {Link} from 'react-router-dom'
 import Downloads from './Downloads'
 import Test from './Test'
+import {fetchCampaign} from '../actions/campaignActions'
 
 const reportData = {
     title: 'title'      
 }
-class Report extends Component {
-    
+class Report extends Component {    
     render(){
         return(
             <div>
@@ -18,12 +18,13 @@ class Report extends Component {
                 {this.props.campaign.campaign_title}
                 {console.log(this.props.campaign)}
             </p>
-            {/* <Downloads data={this.props.campaign} /> */}
-            <Test />
+            <a href={`http://localhost:9000/campaigns/${this.props.campaign.id}/download`} target="_blank"><button>Download</button></a>
+
+
             </div>
         )
         
     }
 }
 
-export default Report
+export default connect(null, {fetchCampaign})(Report)
