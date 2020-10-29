@@ -23,7 +23,9 @@ export const fetchCampaigns = () => {
             }
           })
         .then(response => response.json())
-        .then(campaignsData => dispatch(addCampaigns(campaignsData)))
+        .then(campaignsData => {
+            dispatch(addCampaigns(campaignsData.reports))
+        })
         .catch(console.log())
     }
 }

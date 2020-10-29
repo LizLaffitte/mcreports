@@ -6,6 +6,7 @@ import Report from './components/Report'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {fetchCampaigns} from './actions/campaignActions'
+import Downloads from './components/Downloads'
 
 class App extends Component {
   componentDidMount(){
@@ -24,6 +25,7 @@ class App extends Component {
         <Switch>
           <Route exact path='/' render={props => <Campaigns {...props} /> } />
           <Route exact path="/reports/:id" render={props => <Report {...props} campaign={this.findCampaign(props.match.params.id)}/>} />
+          {/* <Route exact path="/downloads" render={props => <Downloads {...props} />} /> */}
         </Switch>
       </div>
       </Router>
