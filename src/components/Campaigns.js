@@ -8,7 +8,6 @@ import Button from './Button'
 class Campaigns extends Component{
     componentDidMount(){
         this.props.fetchCampaigns()
-        
     }
 
     renderCampaigns = () => {
